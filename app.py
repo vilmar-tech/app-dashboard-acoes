@@ -1,5 +1,3 @@
-#from turtle import onclick
-#import tkinter as TK
 import streamlit as st
 import pandas as pd
 import investpy as ip
@@ -69,9 +67,9 @@ baixar_dados = st.sidebar.button('Baixar dados')
 
 
 # elementos centrais da página
-st.title('Monitor')#Exibe o texto na formatação do título. IGUAL H1 DO HTML
+st.title('Monitorar Ações')#Exibe o texto na formatação do título. IGUAL H1 DO HTML
 
-st.header('Ações')#Exibe o texto na formatação do cabeçalho. IGUAL H2 DO HTML
+#st.header('Ações')#Exibe o texto na formatação do cabeçalho. IGUAL H2 DO HTML
 
 st.subheader('Visualização gráfica')#Exibe o texto na formatação de subcabeçalho. IGUAL H3 DO HTML
 
