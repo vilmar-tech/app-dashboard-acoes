@@ -1,4 +1,5 @@
-from turtle import onclick
+#from turtle import onclick
+import tkinter as TK
 import streamlit as st
 import pandas as pd
 import investpy as ip
