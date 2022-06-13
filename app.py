@@ -69,8 +69,6 @@ baixar_dados = st.sidebar.button('Baixar dados')
 # elementos centrais da página
 st.title('Monitorar Ações')#Exibe o texto na formatação do título. IGUAL H1 DO HTML
 
-#st.header('Ações')#Exibe o texto na formatação do cabeçalho. IGUAL H2 DO HTML
-
 st.subheader('Visualização gráfica')#Exibe o texto na formatação de subcabeçalho. IGUAL H3 DO HTML
 
 # st.empty Insire um contêiner de elemento único.
