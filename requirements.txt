@@ -3,3 +3,4 @@ pandas
 investpy
 datetime
 plotly.graph_objs 
+py -m pip install -r requirements.txt
