@@ -62,8 +62,6 @@ interval_select = st.sidebar.selectbox("Selecione o interval:", intervals)# CRIA
 #Exiba um widget de caixa de seleção.
 carregar_dados = st.sidebar.checkbox('Carregar dados')
 
-baixar_dados = st.sidebar.button('Baixar dados')
-
 
 
 # elementos centrais da página
@@ -90,11 +88,27 @@ else: # SE NÃO EXECUTA A FUNÇÃO CONSULTAR AÇÃO
             st.subheader('Dados') # Carregar o h2 com a mensagem dados
             dados = st.dataframe(df) # Passando o dataframe
             stock_select = st.sidebar.selectbox
-        elif baixar_dados:
-            #dados = st.dataframe(df)
-            df.to_csv('investing.csv', index=False)
-            st.warning('baixado com sucesso')
-            
+     
     except Exception as e: #Se ocorrer uma exceção durante a execução da trycláusula, o restante da cláusula será ignorado.E a cláusula except será executada
-        st.error(e)
+        st.error(e)           
+           
+            
+#BAIXANDO DADOS EM CSV
+my_large_df = df
+@st.cache
+def convert_df_to_csv(df):
+  # IMPORTANTE: armazenar a conversão em cache para evitar a computação em cada reexecução
+    return df.to_csv().encode('utf-8')
+
+csv = convert_df_to_csv(my_large_df)
+
+st.sidebar.download_button(
+    label="Baixar dados CSV",
+    data=csv,
+    file_name='dados_df.csv',
+    mime='text/csv',
+    help='clique aqui para baixar os dados da planilha csv',
+)            
+    
+        
 
